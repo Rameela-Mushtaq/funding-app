@@ -10,7 +10,7 @@ import { navlinks } from '../constants';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [isActive, setActive] = useState('dashboard');
+  const [isActive, setIsActive] = useState('dashboard');
   const [toggleDrawer, setToggleDrawer] = useState(false);
   const { connect, address} = useStateContext();
 
@@ -57,7 +57,7 @@ const Navbar = () => {
             onClick={() => setToggleDrawer((prev) => !prev)}
           />
 
-          <div className={`absolute top-[60px] right-0 left-0 bg-[#1c1c24] z-10 shadow-secondary py-4 ${!toggleDrawer ? '-translate-y-[100vh]' : 'translate-y-0'} transition-all duration-700`}>
+          <div className={`absolute top-[60px] right-0 left-0 bg-[#1c1c24] z-1 0 shadow-secondary py-4 ${!toggleDrawer ? '-translate-y-[100vh]' : 'translate-y-0'} transition-all duration-700`}>
             <ul className="mb-4">
               {navlinks.map((link) => (
                 <li
